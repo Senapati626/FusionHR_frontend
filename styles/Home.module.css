@@ -1,0 +1,114 @@
+
+.navbar{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    padding: 0 50px;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 500;
+}
+.logo{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.logo span:nth-child(1){
+    color: var(--orange);
+}
+.logo span:nth-child(2){
+    color: var(--red);
+}
+.navbar_right{
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+.navbar_right a{
+    text-decoration: none;
+    color: inherit;
+}
+.login_btn{
+    color: #efefef;
+    padding: 0.25rem 0.5rem;
+    background-color: var(--black);
+    border-radius: 5px;
+    cursor: pointer;
+}
+.hero_container{
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+.hero_left{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    padding: 0 100px;
+}
+.hero_header{
+    font-size: 3.25rem;
+    font-weight: 600;
+    max-width: 720px;
+}
+.refer_btn{
+    text-transform: uppercase;
+    width: fit-content;
+    font-size: 1.5rem;
+    background: transparent;
+    outline: 2px solid var(--black);
+    border: none;
+    width: 250px;
+    height: 75px;
+    padding: 0 1.5rem;
+    border-radius: 37.5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    cursor: pointer;
+}
+.refer_btn a{
+    text-decoration: none;
+    color: var(--black);
+}
+.refer_btn span{
+    position: absolute;
+    right: 0;
+    background-color: var(--black);
+    color: #efefef;
+    height: 100%;
+    width: 75px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    transform: rotate(-35deg);
+    font-size: 2.5rem;
+}
+
+.hero_right{
+    display: flex;
+    align-items: center;
+}
+.hero_img{
+    width: 100%;
+    object-fit: contain;
+    min-width: 560px;
+}
+
+@media screen and (max-width:768px) {
+    .hero_right{
+        display: none;
+    }
+    .hero_left{
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+}

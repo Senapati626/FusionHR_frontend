@@ -1,0 +1,59 @@
+.container{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 360px;
+    width: 100%;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    justify-content: center;
+}
+.formDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.formDiv input[type="email"], .formDiv input[type="password"],.formDiv input[type="text"]{
+    padding: 0.25rem 0.5rem;
+    border: 1px solid #646464;
+    border-radius: 5px;
+    transition: all 0.25s ease-in-out;
+    color: gray;
+}
+.formDiv input[type="email"]:focus, .formDiv input[type="password"]:focus,.formDiv input[type="text"]:focus{
+    border: 1px solid var(--orange);
+    outline: none;
+}
+.input_btn{
+    width: 100%;
+    padding: 0.25rem;
+    border-radius: 5px;
+    background: var(--black);
+    color: #fff;
+    border: 2px solid var(--black);
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+}
+.input_btn:hover{
+    background-color: transparent;
+    color: var(--black);
+}
+.formBottom{
+    display: flex;
+    justify-content: center;
+}
+.formBottom a{
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--red);
+}
