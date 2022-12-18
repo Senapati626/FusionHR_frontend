@@ -53,7 +53,7 @@ const Dashboard = ({unfilteredPostings,userid,userdetails}) => {
                             <button onClick={closeReferTab} value={posting._id} className={dashboardStyles.refer_close_btn}>Cancel</button>
                         </div>
                         <div className={dashboardStyles.card_left}>
-                            <button className={dashboardStyles.save_btn} style={{right:"4em"}} onClick={()=>navigator.clipboard.writeText(`http://localhost:3000/candidate/${userid}?posting=${posting._id}`).then(alert('Referral link copied to clipboard. Send the link to candidate.'))}>
+                            <button className={dashboardStyles.save_btn} style={{right:"4em"}} onClick={()=>navigator.clipboard.writeText(`https://fusion-hr-frontend.vercel.app/candidate/${userid}?posting=${posting._id}`).then(alert('Referral link copied to clipboard. Send the link to candidate.'))}>
                                 <img src='/assets/share.png' alt='Share'/>
                             </button>
                             {posting.saved_users.includes(userid) ?

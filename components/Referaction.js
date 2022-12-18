@@ -111,7 +111,7 @@ const Referaction = ({linkavailable,postingId,userId,postName,postOrganization,q
             <div className={referStyles.or} style={linkavailable === 'true' ? {display:"flex"} : {display:"none"}}><p>OR</p></div>
             <div className={referStyles.link} style={linkavailable === 'true' ? {display:"flex"} : {display:"none"}}>
                 <p>Copy and send this link to candidate.</p>
-                <p>{`http://localhost:3000/candidate/${userId}?posting=${postingId}`}</p>
+                <p>{`https://fusion-hr-frontend.vercel.app/candidate/${userId}?posting=${postingId}`}</p>
             </div>
         </div>
     );
