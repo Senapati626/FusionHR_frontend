@@ -19,7 +19,7 @@ const Saved = ({postings,userid,userdetails}) => {
 
     const removeSave = (e)=>{
         try {
-            axios.put('http://localhost:4000/removesave',{
+            axios.put('https://copper-chipmunk-gown.cyclic.app/removesave',{
                 userid: userid,
                 posting: e.currentTarget.value
             })

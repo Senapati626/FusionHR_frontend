@@ -9,7 +9,7 @@ const Dashboard = ({unfilteredPostings,userid,userdetails}) => {
     const [searchText, setSearchText] = useState("")
     const savePosting = async(e)=>{
         let posting = e.currentTarget.value
-        const response = await axios.post("http://localhost:4000/saveuser",{
+        const response = await axios.post("https://copper-chipmunk-gown.cyclic.app/saveuser",{
             userid: userid,
             posting: posting
         })
@@ -49,10 +49,13 @@ const Dashboard = ({unfilteredPostings,userid,userdetails}) => {
                     return(
                     <div className={dashboardStyles.card} key={index}>
                         <div className={dashboardStyles.refer_container} id={posting._id}>
-                            <Referaction postingId={posting._id} userId={userid} postName={posting.post_name} questions={posting.screening_questions} postOrganization={posting.organization} useremail={userdetails.emailAddress} username={userdetails.fullName} linkavailable={'true'}/>
+                            <Referaction postingId={posting._id} userId={userid} postName={posting.post_name} questions={posting.screening_questions} postOrganization={posting.organization} useremail={userdetails.emailAddress} username={userdetails.fullName} linkavailable={'true'} reward={posting.referral_reward}/>
                             <button onClick={closeReferTab} value={posting._id} className={dashboardStyles.refer_close_btn}>Cancel</button>
                         </div>
                         <div className={dashboardStyles.card_left}>
+                            <button className={dashboardStyles.save_btn} style={{right:"4em"}} onClick={()=>navigator.clipboard.writeText(`http://localhost:3000/candidate/${userid}?posting=${posting._id}`).then(alert('Referral link copied to clipboard. Send the link to candidate.'))}>
+                                <img src='/assets/share.png' alt='Share'/>
+                            </button>
                             {posting.saved_users.includes(userid) ?
                             <button className={dashboardStyles.save_btn}>
                                 <svg viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="m0 512v-464c0-26.51 21.49-48 48-48h288c26.51 0 48 21.49 48 48v464l-192-112z"/></svg>

@@ -5,14 +5,14 @@ import Link from 'next/link'
 const register = () => {
     return (
         <div className={formStyles.container}>
-        <form action='/api/registerapi' method='POST' className={formStyles.form}>
+        <form className={formStyles.form} action="/api/registerapi" method="post">
             <div className={formStyles.formDiv}>
                 <label htmlFor='fullName'>Full Name</label>
-                <input type='text' name='fullName' id='fullName' required></input>
+                <input type='text' name='fullname' id='fullName' required></input>
             </div>
             <div className={formStyles.formDiv}>
                 <label htmlFor='emailAddress'>Email Address</label>
-                <input type='email' name='emailAddress' id='emailAddress' required></input>
+                <input type='email' name='emailid' id='emailAddress' required></input>
             </div>
             <div className={formStyles.formDiv}>
                 <label htmlFor='password'>Password</label>

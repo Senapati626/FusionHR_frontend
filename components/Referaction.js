@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import referStyles from '../styles/Refer.module.css'
 import axios from 'axios';
-const Referaction = ({linkavailable,postingId,userId,postName,postOrganization,questions,username,useremail}) => {
+const Referaction = ({linkavailable,postingId,userId,postName,postOrganization,questions,username,useremail,reward}) => {
     const [resumefile,setResumefile] = useState("")
 
     const handleSubmit = (event)=>{
@@ -14,7 +14,7 @@ const Referaction = ({linkavailable,postingId,userId,postName,postOrganization,q
             questionnaireArray.push(questionnaire)
         }
         try {
-            axios.post("http://localhost:4000/referral",{
+            axios.post("https://copper-chipmunk-gown.cyclic.app/referral",{
                 given_name: event.target[0].value,
                 surname: event.target[1].value,
                 email_address: event.target[2].value,
@@ -31,7 +31,8 @@ const Referaction = ({linkavailable,postingId,userId,postName,postOrganization,q
                 pipeline:{
                     candidate_referred: "In Progress"
                 },
-                resume: resumefile
+                resume: resumefile,
+                reward: reward
             })
             .then((response)=>{
                 if(response.status===200){

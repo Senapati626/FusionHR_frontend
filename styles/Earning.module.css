@@ -1,0 +1,53 @@
+.grid_container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+}
+.grid{
+    display: flex;
+    width: 100%;
+    background-color: floralwhite;
+    justify-content: space-evenly;
+}
+.grid_cell{
+    width: calc(100%/7);
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 0.5em 1em;
+    position: relative;
+}
+.grid_cell p{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+}
+.grid_header{
+    background-color: var(--red);
+    color: #fff;
+    font-weight: 600;
+}
+.grid_cell:hover .tooltip{
+    opacity: 1;
+}
+.tooltip{
+    background-color: #fff;
+    color: var(--red);
+    padding: 0.25em;
+    position: absolute;
+    top: -100%;
+    z-index: 99;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+.header{
+    text-align: center;
+}
+.header h1{
+    font-size: 2em;
+    color: var(--red);
+    font-weight: 600;
+}

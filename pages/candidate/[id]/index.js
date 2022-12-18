@@ -10,7 +10,7 @@ const index = ({userdetails}) => {
     const [visibleForm,setVisibleForm] = useState(false)
     const getPosting = async(postingid)=>{
         try {
-            await axios.get(`http://localhost:4000/postings/${postingid}`)
+            await axios.get(`https://copper-chipmunk-gown.cyclic.app/postings/${postingid}`)
             .then((response)=>setJob([response.data]))
         } catch (error) {
             console.log(error)
@@ -71,7 +71,7 @@ const index = ({userdetails}) => {
                 </div>
                 <div className={styles.formContainer} style={visibleForm ? {display:"grid",pointerEvents:"all"} : {display:"none",pointerEvents:"none"}}>
                     <button onClick={()=>setVisibleForm(false)}>Close</button>
-                    <Referaction postingId={job[0]._id} userId={userdetails[0]._id} postName={job[0].post_name} questions={job[0].screening_questions} postOrganization={job[0].organization} useremail={userdetails[0].emailAddress} username={userdetails[0].fullName} linkavailable={'false'}/>
+                    <Referaction postingId={job[0]._id} userId={userdetails[0]._id} postName={job[0].post_name} questions={job[0].screening_questions} postOrganization={job[0].organization} useremail={userdetails[0].emailAddress} username={userdetails[0].fullName} linkavailable={'false'} reward={job[0].referral_reward}/>
                 </div>
             </div>
             }
@@ -80,7 +80,7 @@ const index = ({userdetails}) => {
 };
 
 export const getServerSideProps = async(context)=>{
-    const responseUsers = await fetch(`http://localhost:4000/userdetails/${context.params.id}`)
+    const responseUsers = await fetch(`https://copper-chipmunk-gown.cyclic.app/userdetails/${context.params.id}`)
     const userdetails = await responseUsers.json()
     return{
         props:{

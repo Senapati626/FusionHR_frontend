@@ -9,13 +9,13 @@ const Myreferrals = ({userdetails}) => {
 
     useEffect(()=>{
         try {
-            axios.get(`http://localhost:4000/referral/${userdetails._id}`)
+            axios.get(`https://copper-chipmunk-gown.cyclic.app/referral/${userdetails._id}`)
             .then((response)=>setReferrals(response.data))
         } catch (error) {
             console.log(error)
         }
         try {
-            axios.get('http://localhost:4000/admin/query')
+            axios.get('https://copper-chipmunk-gown.cyclic.app/admin/query')
             .then((response)=>setUnfilteredueries(response.data))
         } catch (error) {
             console.log(error)
@@ -25,7 +25,7 @@ const Myreferrals = ({userdetails}) => {
     const handleCommentSubmit = async(e)=>{
         e.preventDefault()
         try {
-            await axios.post('http://localhost:4000/user/query',
+            await axios.post('https://copper-chipmunk-gown.cyclic.app/user/query',
                 {
                     userId: userdetails._id,
                     userName: userdetails.fullName,

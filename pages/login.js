@@ -1,10 +1,11 @@
 import React from 'react';
 import formStyles from '../styles/Forms.module.css'
 import Link from 'next/link'
+
 const login = () => {
     return (
         <div className={formStyles.container}>
-                <form action='/api/loginapi' method='POST' className={formStyles.form}>
+                <form className={formStyles.form} action="/api/loginapi" method='post'>
                     <div className={formStyles.formDiv}>
                         <label htmlFor='emailAddress'>Email Address</label>
                         <input type='email' name='emailAddress' id='emailAddress' required></input>
